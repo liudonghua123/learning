@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>数据模型设计 | Learning</title>
+        <title>Ardunio主要函数简介 | Learning</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.1.0">
@@ -25,10 +25,10 @@
         
     
     
-    <link rel="next" href="../../mongodb/data-model/model-embedded-one-to-one-relationships-between-documents.html" />
+    <link rel="next" href="../../Arduino/Combat/Combat1.html" />
     
     
-    <link rel="prev" href="../../mongodb/data-model/introduction.html" />
+    <link rel="prev" href="../../Arduino/Datatype/index.html" />
     
 
         
@@ -36,7 +36,7 @@
     <body>
         
         
-    <div class="book" data-level="2.7.2" data-basepath="../.." data-revision="Wed Jun 03 2015 16:34:56 GMT+0800 (China Standard Time)">
+    <div class="book" data-level="5.4" data-basepath="../.." data-revision="Wed Jun 03 2015 16:34:56 GMT+0800 (China Standard Time)">
     
 
 <div class="book-summary">
@@ -1031,7 +1031,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.7.2" data-path="mongodb/data-model/data-model-design.html">
+        <li class="chapter " data-level="2.7.2" data-path="mongodb/data-model/data-model-design.html">
             
                 
                     <a href="../../mongodb/data-model/data-model-design.html">
@@ -2215,7 +2215,7 @@
             
         </li>
     
-        <li class="chapter " data-level="5.4" data-path="Arduino/Function/index.html">
+        <li class="chapter active" data-level="5.4" data-path="Arduino/Function/index.html">
             
                 
                     <a href="../../Arduino/Function/index.html">
@@ -2477,27 +2477,34 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B%E8%AE%BE%E8%AE%A1">&#x6570;&#x636E;&#x6A21;&#x578B;&#x8BBE;&#x8BA1;</h1>
-<h2 id="%E5%86%85%E5%B5%8C%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B">&#x5185;&#x5D4C;&#x6570;&#x636E;&#x6A21;&#x578B;</h2>
-<p><img src="data-model-denormalized.png" alt="Data model with embedded fields that contain all related information."></p>
+                        <h1 id="ardunio%E4%B8%BB%E8%A6%81%E5%87%BD%E6%95%B0%E7%AE%80%E4%BB%8B">Ardunio&#x4E3B;&#x8981;&#x51FD;&#x6570;&#x7B80;&#x4ECB;</h1>
 <ul>
-<li>&#x4E00;&#x822C;&#x5730;&#xFF0C;&#x8FD9;&#x51E0;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x5185;&#x5D4C;&#x6570;&#x636E;&#x6A21;&#x578B;&#xFF1A;<ul>
-<li>&#x5B9E;&#x4F53;&#x4E4B;&#x95F4;&#x5B58;&#x5728;&#x201C;&#x5305;&#x542B;&#x201D;&#x5173;&#x7CFB;&#xFF08;One-to-One&#xFF09;&#xFF1B;</li>
-<li>&#x5B9E;&#x4F53;&#x4E4B;&#x95F4;&#x5B58;&#x5728;&#x201C;One-to-Many&#x201D;&#x5173;&#x7CFB;&#xFF1B;</li>
+<li><strong>&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x51FD;&#x6570;</strong></li>
 </ul>
-</li>
-<li>&#x5185;&#x5D4C;&#x6570;&#x636E;&#x6A21;&#x578B;&#x4E3A;&#x8BFB;&#x64CD;&#x4F5C;&#x63D0;&#x4F9B;&#x66F4;&#x597D;&#x7684;&#x6027;&#x80FD;&#xFF1B;</li>
-<li>&#x5185;&#x5D4C;&#x5173;&#x7CFB;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x6587;&#x6863;&#x5728;&#x66F4;&#x65B0;&#x4E4B;&#x540E;&#x51FA;&#x73B0;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#x589E;&#x957F;&#x3002;&#x5F53;&#x6570;&#x636E;&#x5E93;&#x8BD5;&#x7528;MMAPv1&#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x65F6;&#xFF0C;&#x8FD9;&#x5C06;&#x5F71;&#x54CD;&#x5199;&#x64CD;&#x4F5C;&#x7684;&#x6027;&#x80FD;&#xFF0C;&#x5E76;&#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x73B0;&#x6570;&#x636E;&#x788E;&#x7247;&#x5316;&#xFF1B;</li>
-</ul>
-<h2 id="%E5%B8%B8%E8%A7%84%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B">&#x5E38;&#x89C4;&#x6570;&#x636E;&#x6A21;&#x578B;</h2>
-<p><img src="data-model-normalized.png" alt="Data model using references to link documents. Both the ``contact`` document and the ``access`` document contain a reference to the ``user`` document."></p>
-<ul>
-<li>&#x4E00;&#x822C;&#x5730;&#xFF0C;&#x4EE5;&#x4E0B;&#x51E0;&#x79CD;&#x60C5;&#x5F62;&#x5E94;&#x5F53;&#x4F7F;&#x7528;&#x5E38;&#x89C4;&#x6570;&#x636E;&#x6A21;&#x578B;<ul>
-<li>&#x5185;&#x5D4C;&#x6570;&#x636E;&#x6A21;&#x578B;&#x4E0D;&#x80FD;&#x63D0;&#x4F9B;&#x5F88;&#x597D;&#x7684;&#x6027;&#x80FD;&#x7684;&#x65F6;&#x5019;&#xFF1B;</li>
-<li>&#x5B9E;&#x4F53;&#x4E4B;&#x95F4;&#x5B58;&#x5728;&#x201C;Many-to-Many&#x201D;&#x5173;&#x7CFB;&#x65F6;&#xFF1B;</li>
-</ul>
-</li>
-</ul>
+<p>pinMode(pin, mode)</p>
+<p>&#x5C06;&#x6570;&#x4F4D;&#x811A;&#x4F4D;(digital pin)&#x6307;&#x5B9A;&#x4E3A;&#x8F93;&#x5165;&#x6216;&#x8F93;&#x51FA;&#x3002;</p>
+<p>&#x8303;&#x4F8B; :</p>
+<p><code>pinMode(7,INPUT); // &#x5C06;&#x811A;&#x4F4D; 7 &#x8BBE;&#x5B9A;&#x4E3A;&#x8F93;&#x5165;&#x6A21;&#x5F0F;</code></p>
+<p>digitalWrite(pin, value)</p>
+<p>&#x5C06;&#x6570;&#x4F4D;&#x811A;&#x4F4D;&#x6307;&#x5B9A;&#x4E3A;&#x5F00;&#x6216;&#x5173;&#x3002;&#x811A;&#x4F4D;&#x5FC5;&#x987B;&#x5148;&#x900F;&#x8FC7;pinMode&#x660E;&#x793A;&#x4E3A;&#x8F93;&#x5165;&#x6216;&#x8F93;&#x51FA;&#x6A21;&#x5F0F;digitalWrite&#x624D;&#x80FD;&#x751F;&#x6548;&#x3002;</p>
+<p>&#x8303;&#x4F8B; :</p>
+<p><code>digitalWrite(8,HIGH); //&#x5C06;&#x811A;&#x4F4D; 8&#x8BBE;&#x5B9A;&#x8F93;&#x51FA;&#x9AD8;&#x7535;&#x4F4D;</code></p>
+<p>int digitalRead(pin)</p>
+<p>&#x5C06;&#x8F93;&#x5165;&#x811A;&#x4F4D;&#x7684;&#x503C;&#x8BFB;&#x51FA;&#xFF0C;&#x5F53;&#x611F;&#x6D4B;&#x5230;&#x811A;&#x4F4D;&#x5904;&#x4E8E;&#x9AD8;&#x7535;&#x4F4D;&#x65F6;&#x65F6;&#x56DE;&#x4F20;HIGH&#xFF0C;&#x5426;&#x5219;&#x56DE;&#x4F20;LOW&#x3002;</p>
+<p>&#x8303;&#x4F8B; :</p>
+<p><code>val = digitalRead(7); // &#x8BFB;&#x51FA;&#x811A;&#x4F4D; 7 &#x7684;&#x503C;&#x5E76;&#x6307;&#x5B9A;&#x7ED9; val</code></p>
+<p>int analogRead(pin)</p>
+<p>&#x8BFB;&#x51FA;&#x7C7B;&#x6BD4;&#x811A;&#x4F4D;&#x7684;&#x7535;&#x538B;&#x5E76;&#x56DE;&#x4F20;&#x4E00;&#x4E2A; 0&#x5230;1023 &#x7684;&#x6570;&#x503C;&#x8868;&#x793A;&#x76F8;&#x5BF9;&#x5E94;&#x7684;0&#x5230;5&#x7684;&#x7535;&#x538B;&#x503C;&#x3002;</p>
+<p>&#x8303;&#x4F8B; :</p>
+<p><code>val = analogRead(0); //&#x8BFB;&#x51FA;&#x7C7B;&#x6BD4;&#x811A;&#x4F4D; 0 &#x7684;&#x503C;&#x5E76;&#x6307;&#x5B9A;&#x7ED9; val&#x53D8;&#x6570;</code></p>
+<p>analogWrite(pin, value)</p>
+<p>&#x6539;&#x53D8;PWM&#x811A;&#x4F4D;&#x7684;&#x8F93;&#x51FA;&#x7535;&#x538B;&#x503C;&#xFF0C;&#x811A;&#x4F4D;&#x901A;&#x5E38;&#x4F1A;&#x5728;3&#x3001;5&#x3001;6&#x3001;9&#x3001;10&#x4E0E;11&#x3002;Value&#x53D8;&#x6570;&#x8303;&#x56F4;0-255&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;&#x8F93;&#x51FA;&#x7535;&#x538B;2.5&#x4F0F;&#x7279;&#xFF08;V&#xFF09;&#xFF0C;&#x8BE5;&#x503C;&#x5927;&#x7EA6;&#x662F;128&#x3002;</p>
+<p>&#x8303;&#x4F8B; :</p>
+<p><code>analogWrite(9,128); // &#x8F93;&#x51FA;&#x7535;&#x538B;&#x7EA6;2.5&#x4F0F;&#x7279;&#xFF08;V&#xFF09;</code></p>
+<p>unsigned long pulseIn(pin, value)</p>
+<p>&#x8BBE;&#x5B9A;&#x8BFB;&#x53D6;&#x811A;&#x4F4D;&#x72B6;&#x6001;&#x7684;&#x6301;&#x7EED;&#x65F6;&#x95F4;&#xFF0C;&#x4F8B;&#x5982;&#x4F7F;&#x7528;&#x7EA2;&#x5916;&#x7EBF;&#x3001;&#x52A0;&#x901F;&#x5EA6;&#x611F;&#x6D4B;&#x5668;&#x6D4B;&#x5F97;&#x67D0;&#x4E00;&#x9879;&#x6570;&#x503C;&#x65F6;&#xFF0C;&#x5728;&#x65F6;&#x95F4;&#x5355;&#x4F4D;&#x5185;&#x4E0D;&#x4F1A;&#x6539;&#x53D8;&#x72B6;&#x6001;&#x3002;</p>
+<p>&#x8303;&#x4F8B; :</p>
+<p><code>time = pulsein(7,HIGH); // &#x8BBE;&#x5B9A;&#x811A;&#x4F4D;7&#x7684;&#x72B6;&#x6001;&#x5728;&#x65F6;&#x95F4;&#x5355;&#x4F4D;&#x5185;&#x4FDD;&#x6301;&#x4E3A;HIGH</code></p>
 
                     
                     </section>
@@ -2508,10 +2515,10 @@
         </div>
 
         
-        <a href="../../mongodb/data-model/introduction.html" class="navigation navigation-prev " aria-label="Previous page: 数据建模概述"><i class="fa fa-angle-left"></i></a>
+        <a href="../../Arduino/Datatype/index.html" class="navigation navigation-prev " aria-label="Previous page: Ardunio数据类型与运算符"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../mongodb/data-model/model-embedded-one-to-one-relationships-between-documents.html" class="navigation navigation-next " aria-label="Next page: 使用内嵌数据模型对“One-to-One”关系建模"><i class="fa fa-angle-right"></i></a>
+        <a href="../../Arduino/Combat/Combat1.html" class="navigation navigation-next " aria-label="Next page: Ardunio实验1"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
